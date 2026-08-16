@@ -12,6 +12,7 @@ Webディレクター業務のナレッジと成果物をためていく個人�
 | [`docs/checklists/`](docs/checklists/) | 公開前チェック、SEO、アクセシビリティなどの確認項目 |
 | [`projects/`](projects/) | 案件ごとのフォルダ |
 | [`projects/_template/`](projects/_template/) | 新しい案件を始めるときにコピーするひな形 |
+| [`portfolio/`](portfolio/) | ディレクターとしての実績。1実績1ファイル |
 
 ## 進め方
 
