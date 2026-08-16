@@ -13,6 +13,7 @@ Webディレクター業務のナレッジと成果物をためていく個人�
 | [`projects/`](projects/) | 案件ごとのフォルダ |
 | [`projects/_template/`](projects/_template/) | 新しい案件を始めるときにコピーするひな形 |
 | [`portfolio/`](portfolio/) | ディレクターとしての実績。1実績1ファイル |
+| [`site/`](site/) | 公開するポートフォリオサイト。GitHub Pages で自動公開される |
 
 ## 進め方
 
