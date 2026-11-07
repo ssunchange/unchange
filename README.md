@@ -14,6 +14,7 @@ Webディレクター業務のナレッジと成果物をためていく個人�
 | [`projects/_template/`](projects/_template/) | 新しい案件を始めるときにコピーするひな形 |
 | [`portfolio/`](portfolio/) | ディレクターとしての実績。1実績1ファイル |
 | [`site/`](site/) | 公開するポートフォリオサイト。[unchange.jp](https://unchange.jp/) に自動公開される |
+| [`learning/`](learning/) | 自分の学習計画と進み具合の記録 |
 
 ## 進め方
 
