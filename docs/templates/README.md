@@ -7,6 +7,8 @@
 ## あるもの
 
 - [`portfolio-entry-template.md`](portfolio-entry-template.md) — [`portfolio/`](../../portfolio/) に実績を1件書くための雛形
+- [`user-interview-template.md`](user-interview-template.md) — ユーザーインタビューの計画・質問表・記録・まとめ
+- [`usability-test-template.md`](usability-test-template.md) — ユーザビリティテストの計画・課題・記録・まとめ
 
 ## 置く予定のもの
 
