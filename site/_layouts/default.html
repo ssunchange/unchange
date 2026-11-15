@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- comment -%}
+  タイトル・説明文・SNS 用の表示は jekyll-seo-tag が自動で入れる。
+  各ページの冒頭（--- で囲んだ部分）の title と description が使われる。
+{%- endcomment %}
+{% seo %}
+{% feed_meta %}
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="サイト内">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">unchange</a>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>トップ</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>ブログ</a></li>
+    </ul>
+  </div>
+</nav>
+
+{{ content }}
+
+<footer>
+  <div class="wrap">
+    <p>&copy; unchange</p>
+  </div>
+</footer>
+
+</body>
+</html>
