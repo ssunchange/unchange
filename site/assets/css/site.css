@@ -1,0 +1,363 @@
+/*
+  サイト全体の見た目。全ページがこの1ファイルを読み込む。
+  色は :root の変数で管理している。色を変えるときは変数だけを触る。
+*/
+
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #f6f6f4;
+  --text: #1a1a18;
+  --text-muted: #6b6b66;
+  --border: #e2e2dd;
+  --accent: #b4532a;
+  --max: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161614;
+    --bg-subtle: #1f1e1b;
+    --text: #ecebe7;
+    --text-muted: #a3a099;
+    --border: #32302c;
+    --accent: #e08155;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 上部のナビゲーション（全ページ共通） */
+
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  font-size: .88rem;
+}
+
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 3.5rem;
+}
+
+.site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-nav .brand {
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav ul a { color: var(--text-muted); }
+.site-nav ul a:hover,
+.site-nav ul a:focus-visible,
+.site-nav ul a[aria-current="page"] { color: var(--accent); }
+
+/* トップページの冒頭 */
+
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.4;
+  letter-spacing: .02em;
+}
+
+.hero .meaning {
+  margin-left: .6em;
+  font-size: .4em;
+  font-weight: 400;
+  letter-spacing: .3em;
+  color: var(--text-muted);
+  vertical-align: .35em;
+  white-space: nowrap;
+}
+
+.hero .role {
+  margin: 0 0 2rem;
+  color: var(--accent);
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.hero .lead {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* セクション共通 */
+
+section { padding: 3.5rem 0; }
+section + section { border-top: 1px solid var(--border); }
+
+h2 {
+  margin: 0 0 1.75rem;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--text-muted);
+}
+
+h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+p { margin: 0 0 1.25rem; }
+p:last-child { margin-bottom: 0; }
+
+.more {
+  margin-top: 1.5rem;
+  font-size: .9rem;
+}
+
+.more a,
+.contact a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .25em;
+}
+
+/* できること */
+
+.skills {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.skills h3 { font-size: 1rem; }
+
+.skills p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: .92rem;
+}
+
+/* カード（実績・ブログ一覧で共用） */
+
+.works { display: grid; gap: 1rem; }
+
+.work {
+  display: block;
+  padding: 1.5rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: .5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color .15s ease;
+}
+
+a.work:hover, a.work:focus-visible { border-color: var(--accent); }
+
+.work .meta {
+  margin: 0 0 .75rem;
+  color: var(--text-muted);
+  font-size: .82rem;
+  letter-spacing: .04em;
+}
+
+.work p:last-child {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: .92rem;
+}
+
+.empty {
+  padding: 2.5rem 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: .5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .92rem;
+}
+
+/* ブログ一覧ページの見出し */
+
+.page-head {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-head h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.5;
+}
+
+.page-head p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* 記事ページ */
+
+.post-head {
+  padding: 3.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-head .meta {
+  margin: 0 0 .75rem;
+  color: var(--text-muted);
+  font-size: .85rem;
+  letter-spacing: .04em;
+}
+
+.post-head h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  line-height: 1.5;
+}
+
+/* 広告を含む記事に出す表記（ステマ規制への対応） */
+.pr-notice {
+  margin: 1.5rem 0 0;
+  padding: .6rem 1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: .4rem;
+  color: var(--text-muted);
+  font-size: .85rem;
+}
+
+.post-body {
+  padding: 2.5rem 0 3.5rem;
+  overflow-wrap: anywhere;
+}
+
+/* 記事本文の中の見出しは、トップページの小見出しとは別の見た目にする */
+.post-body h2 {
+  margin: 3rem 0 1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.35rem;
+  letter-spacing: .02em;
+  color: var(--text);
+}
+
+.post-body h3 {
+  margin: 2.25rem 0 .75rem;
+  font-size: 1.12rem;
+}
+
+.post-body h2:first-child,
+.post-body h3:first-child { margin-top: 0; }
+
+.post-body ul,
+.post-body ol { margin: 0 0 1.25rem; padding-left: 1.5em; }
+
+.post-body li + li { margin-top: .3rem; }
+
+.post-body a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .25em;
+}
+
+.post-body blockquote {
+  margin: 0 0 1.25rem;
+  padding: .25rem 0 .25rem 1.25rem;
+  border-left: 3px solid var(--border);
+  color: var(--text-muted);
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: .4rem;
+}
+
+.post-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+
+.post-body th,
+.post-body td {
+  padding: .5rem .75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.post-body th { background: var(--bg-subtle); }
+
+.post-body code {
+  padding: .1em .35em;
+  background: var(--bg-subtle);
+  border-radius: .25rem;
+  font-size: .9em;
+}
+
+.post-body pre {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: .4rem;
+  line-height: 1.6;
+}
+
+.post-body pre code { padding: 0; background: none; }
+
+.post-body hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.post-foot {
+  padding: 2rem 0 3.5rem;
+  border-top: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.post-foot a { color: var(--accent); }
+
+/* フッター */
+
+footer {
+  padding: 2.5rem 0 4rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: .82rem;
+}

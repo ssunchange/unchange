@@ -6,6 +6,7 @@
 
 ## あるもの
 
+- [`blog-post-template.md`](blog-post-template.md) — unchange.jp のブログ記事を1本書くための雛形。[`site/_posts/`](../../site/_posts/) にコピーして使う
 - [`portfolio-entry-template.md`](portfolio-entry-template.md) — [`portfolio/`](../../portfolio/) に実績を1件書くための雛形
 
 ## 置く予定のもの

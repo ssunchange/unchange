@@ -1,0 +1,29 @@
+# サイト全体の設定。公開時に Jekyll（Markdown を HTML に変換する仕組み）が読む。
+# この値を変えたら、公開されたページの見た目や URL が変わる。
+
+title: unchange
+description: Webディレクター unchange のサイト。担当した案件と、仕事のノウハウをまとめています。
+lang: ja_JP
+url: https://unchange.jp
+baseurl: ""
+
+# 記事の URL。例: https://unchange.jp/blog/2026/11/20/requirements/
+permalink: /blog/:year/:month/:day/:title/
+
+# 日付の表示形式
+date_format: "%Y年%-m月%-d日"
+
+timezone: Asia/Tokyo
+
+# 追加機能
+#   jekyll-seo-tag : 検索結果や SNS でシェアされたときの表示（タイトル・説明文）を自動で付ける
+#   jekyll-feed    : 更新を購読できる RSS フィードを /feed.xml に作る
+#   jekyll-sitemap : 検索エンジン向けのページ一覧を /sitemap.xml に作る
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+# 公開しないファイル（説明書きなど）
+exclude:
+  - README.md

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{%- comment -%}
+  記事1本の見た目。site/_posts/ の Markdown はすべてこの形で表示される。
+  記事の冒頭に pr: true と書くと、広告を含む旨の表記が出る。
+{%- endcomment %}
+<main>
+  <article>
+    <header class="post-head">
+      <div class="wrap">
+        <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time></p>
+        <h1>{{ page.title }}</h1>
+        {%- if page.pr %}
+        <p class="pr-notice">この記事には広告（PR）を含みます。</p>
+        {%- endif %}
+      </div>
+    </header>
+
+    <div class="post-body">
+      <div class="wrap">
+        {{ content }}
+      </div>
+    </div>
+  </article>
+
+  <div class="post-foot">
+    <div class="wrap">
+      <p><a href="{{ '/blog/' | relative_url }}">ブログの一覧へ戻る</a></p>
+    </div>
+  </div>
+</main>

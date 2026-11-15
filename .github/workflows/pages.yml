@@ -1,5 +1,8 @@
 # site/ の内容を GitHub Pages に公開する。
 # main が更新されると自動で動く。Actions タブで実行状況を確認できる。
+#
+# 流れ: site/ を Jekyll で HTML に変換 → 変換結果（_site/）を公開
+# ブログ記事（site/_posts/ の Markdown）は、この変換の段階で HTML になる。
 
 name: サイトを公開
 
@@ -22,19 +25,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/configure-pages@v5
 
+      # Markdown や共通レイアウトを HTML に変換する（GitHub Pages 標準の Jekyll）
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./site
+          destination: ./_site
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4

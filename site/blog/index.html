@@ -1,0 +1,35 @@
+---
+layout: default
+title: ブログ
+description: Webディレクターの仕事のノウハウ。要件定義、進行管理、制作ディレクションで実際に使っている考え方と道具をまとめています。
+---
+{%- comment -%}
+  ブログの一覧ページ。site/_posts/ に記事を置くと、新しい順に自動で並ぶ。
+  このファイルに手で記事を足す必要はない。
+{%- endcomment %}
+<main>
+  <header class="page-head">
+    <div class="wrap">
+      <h1>ブログ</h1>
+      <p>Webディレクターの仕事のノウハウをまとめています。</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="works">
+        {%- for post in site.posts %}
+        <a class="work" href="{{ post.url | relative_url }}">
+          <p class="meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time></p>
+          <h3>{{ post.title }}</h3>
+          {%- if post.description %}
+          <p>{{ post.description }}</p>
+          {%- endif %}
+        </a>
+        {%- else %}
+        <div class="empty">記事を準備中です。</div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+</main>
