@@ -14,6 +14,7 @@ Webディレクター業務のナレッジと成果物をためていく個人�
 | [`projects/_template/`](projects/_template/) | 新しい案件を始めるときにコピーするひな形 |
 | [`portfolio/`](portfolio/) | ディレクターとしての実績。1実績1ファイル |
 | [`site/`](site/) | 公開するサイト（ポートフォリオとブログ）。[unchange.jp](https://unchange.jp/) に自動公開される |
+| [`.claude/skills/`](.claude/skills/) | Claude に決まった作業をさせるための手順書（スキル）。例：`/proofread-ja` で日本語を校正 |
 
 ## 進め方
 
